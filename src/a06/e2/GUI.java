@@ -10,6 +10,7 @@ public class GUI extends JFrame {
     
     private static final long serialVersionUID = -6218820567019985015L;
     private final List<JButton> cells = new ArrayList<>();
+    Random rand = new Random();
     
     public GUI(int width) {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -20,7 +21,7 @@ public class GUI extends JFrame {
         
         ActionListener al = e -> {
             var jb = (JButton)e.getSource();
-        	jb.setText(String.valueOf(cells.indexOf(jb)));
+        	jb.setText(rand.nextInt(1,7)+"");
         };
                 
         for (int i=0; i<width; i++){
